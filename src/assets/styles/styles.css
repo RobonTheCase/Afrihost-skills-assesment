@@ -1,0 +1,493 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@200;300;400;500;600;700&display=swap");
+
+/* Global styling */
+body {
+  background-color: #f4f6fc;
+  font-family: "Rubik";
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Mobile stlying */
+
+@media (max-width: 767px) {
+  body.no-scroll {
+    overflow: hidden;
+  }
+
+  .main-container {
+    width: 100%;
+    max-width: 767px;
+  }
+
+  .content-container {
+    padding: 0 25px;
+    overflow-x: hidden;
+  }
+
+  .dashboard-heading {
+    display: none;
+  }
+  .vehicle-count {
+    display: none;
+  }
+
+  .show-filters {
+    width: 100%;
+    padding: 12px 50px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2e5bff;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-top: 30px;
+  }
+
+  .data-hide {
+    display: none;
+  }
+
+  .heading-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    color: #bfc5d2;
+    margin: 25px 0;
+  }
+
+  .data-row {
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 20px;
+    background: white;
+    font-weight: 400;
+  }
+
+  .data-img {
+    width: 18%;
+  }
+
+  .data-name {
+    width: 26%;
+  }
+
+  .name {
+    font-weight: 500;
+    font-size: 16px;
+    overflow: hidden;
+  }
+
+  .id {
+    color: #8798ad;
+    font-size: 16px;
+  }
+
+  .data-service {
+    width: 35%;
+    font-size: 16px;
+  }
+
+  .veh-img {
+    width: 50px;
+    border-radius: 25px;
+  }
+
+  .manage-button {
+    color: #2d5bff;
+    background: none;
+    border: 0;
+    font-weight: 600;
+    letter-spacing: 0.025rem;
+    font-size: 16px;
+  }
+  .filter-div {
+    position: fixed;
+    top: 55px;
+    margin-top: 10px;
+    height: calc(100vh - 100px);
+    left: -100%;
+    width: 250px;
+    background-color: white;
+    padding: 20px 20px 20px 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+  }
+  .filter-div.open {
+    left: 0; /* Slide the filter div into view from the left side */
+  }
+  .filter-heading {
+    font-weight: 300;
+    color: #b4becc;
+    font-size: 16px;
+    letter-spacing: 0.05rem;
+  }
+
+  .filter-container input {
+    width: 100%;
+  }
+
+  .filter-label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    margin-top: 10px;
+    letter-spacing: 0.02rem;
+  }
+
+  .filter-label span {
+    font-size: 14px;
+    color: #bfc5d2;
+    align-items: baseline;
+  }
+
+  .show-filters.mobi-only {
+    margin-top: 250px;
+  }
+
+  .filter-overlay {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(145, 151, 165, 0.5);
+    z-index: 995;
+    pointer-events: auto;
+  }
+}
+
+/* desktop styling */
+@media (min-width: 1024px) {
+  /* Dashboard content styling */
+  .main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
+  }
+
+  .content {
+    margin: 80px auto 50px auto;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .content-min {
+    margin: 80px 20px 50px 250px;
+    padding: 20px;
+    max-width: 790px;
+    width: 100%;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .header-info {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .dashboard-heading {
+    font-size: 32px;
+    font-weight: 600;
+    color: #28384d;
+  }
+
+  .dashboard-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .vehicle-count {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #8698ad;
+  }
+
+  .show-filters {
+    padding: 12px 50px;
+    border: none;
+    border-radius: 3px;
+    background-color: #2e5bff;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+
+  .heading-row {
+    display: flex;
+    justify-content: left;
+    font-weight: 400;
+    color: #bfc5d2;
+  }
+
+  .data-rows {
+    margin-top: 15px;
+  }
+
+  .data-row {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 20px;
+    background: white;
+    font-weight: 300;
+  }
+
+  .data-row:hover {
+    background-color: #e8edff;
+  }
+
+  .data-img {
+    width: 8%;
+    margin-left: 20px;
+  }
+
+  .veh-img {
+    width: 50px;
+    border-radius: 25px;
+  }
+
+  .data-name {
+    width: 15%;
+  }
+
+  .data-model {
+    width: 19%;
+  }
+
+  .data-service {
+    width: 18%;
+  }
+
+  .data-trips {
+    width: 10%;
+  }
+
+  .data-en {
+    width: 24%;
+  }
+
+  .data-man {
+    width: 5%;
+  }
+
+  .manage-button {
+    float: right;
+    margin-right: 20px;
+    background: none;
+    border: none;
+    color: #2e5bff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .name {
+    font-weight: 400;
+  }
+
+  .id {
+    color: #8698ad;
+    font-weight: 200;
+  }
+
+  /* Filters Div */
+  .filter-div {
+    display: block;
+    margin-top: 120px;
+    width: 100%;
+    max-width: 230px;
+    height: 520px;
+    background-color: white;
+    padding: 20px 25px;
+  }
+  .filter-heading {
+    font-weight: 400;
+    color: #b4becc;
+    font-size: 16px;
+    letter-spacing: 0.05rem;
+  }
+
+  .filter-container input {
+    width: 100%;
+  }
+
+  .filter-label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    margin-top: 25px;
+    letter-spacing: 0.02rem;
+  }
+
+  .filter-label span {
+    font-size: 14px;
+    color: #bfc5d2;
+    align-items: baseline;
+  }
+
+  .mobi-only {
+    display: none;
+  }
+}
+
+@media (min-width: 1500px) {
+  .content {
+    margin: 80px auto 50px auto;
+    max-width: 1200px;
+  }
+
+  .content-min {
+    width: 800px;
+    margin: 80px 50px 50px 350px;
+  }
+}
+
+.model-input,
+.location-input,
+.status-input {
+  margin-top: 8px;
+  padding: 10px 0px 10px 20px;
+  font-size: 16px;
+  font-weight: 200;
+  color: #b4becc;
+  cursor: text;
+  border: 1px solid #e8edff;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 210px;
+}
+
+.model-input::placeholder,
+.location-input::placeholder,
+.status-input::placeholder {
+  color: #b4becc;
+  font-weight: 300;
+  letter-spacing: 0.02rem;
+}
+/* Filter range slider styling  */
+
+input[type="range"] {
+  height: 33px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #2d5bff;
+  border-radius: 5px;
+  border: 0px solid #000000;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 4px solid #2d5bff;
+  height: 20px;
+  width: 20px;
+  border-radius: 31px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: #2d5bff;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #2d5bff;
+  border-radius: 5px;
+  border: 0px solid #000000;
+}
+
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 4px solid #2d5bff;
+  height: 23px;
+  width: 23px;
+  border-radius: 31px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 7px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]::-ms-fill-lower {
+  background: #2d5bff;
+  border: 0px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+input[type="range"]::-ms-fill-upper {
+  background: #2d5bff;
+  border: 0px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+input[type="range"]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 4px solid #2d5bff;
+  height: 23px;
+  width: 23px;
+  border-radius: 31px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type="range"]:focus::-ms-fill-lower {
+  background: #2d5bff;
+}
+
+input[type="range"]:focus::-ms-fill-upper {
+  background: #2d5bff;
+}
